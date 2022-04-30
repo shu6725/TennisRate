@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  form(method="post", action="/results").my-3
+    div.form-group 試合形式
+        select(name="matchType")#matchType.form-control
+          option(value="tokyo") シングルス
+          option(value="tokyo") ダブルス
+    div.form-group
+      label(for="winnerScore") 勝ちスコア
+      textarea(name="winnerScore")#winnerScore.form-control
+    div.form-group
+      label(for="loserScore") 負けスコア
+      textarea(name="loserScore")#loserScore.form-control
+    button(type="submit").btn.btn-info 結果報告
