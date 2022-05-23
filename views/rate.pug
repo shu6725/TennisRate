@@ -1,0 +1,9 @@
+extends layout
+
+block content
+        script(src="script.js")
+        script
+            | var value = new Value("<?php echo($value)?>")
+    body
+        script
+            | console.log(value.getValue());

@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  br
+  div.crad-header ログインフォーム
+  div.card-body
+  form(method="post", action="/login").my-3
+    div.form-group.row
+        label(for="email").col-md-4.col-form-label.text-md-right メールアドレス
+        .col-md-6 
+            input(type="text", name="email", autofocus)#email.form-control
+            //- .alert.alert-danger #{errorMessage}
+    .form-group.row 
+        label(for="password").col-md-4.col-form-label.text-md-right password 
+        .col-md-6 
+            input(type="password", name="password")#password.form-control
+    .form-group.row.mb-0 
+        .col-md-8.offset-md-4
+            button(type="submit").btn.btn-primary ログイン
+  form(method="get", action="/register").my-3
+    .form-group.row.mb-0 
+        .col-md-8.offset-md-4
+            button(type="submit").btn 新規作成

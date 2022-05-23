@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  h3.my-3.col-xs-6.col-xs-offset-3.text-center Palyer Info.
+  br
+  div.text-center
+    img(src="/images/icons/federer.jpeg").rounded-circle.col-xs-4.col-xs-offset-4
+    br
+    form(action=`/profile` method="post" enctype='multipart/form-data' ) 画像ファイル
+      input(type='file' name='image' accept='.png, .jpg, .pdf')
+      input(type='submit' name='bottun' value='画像を変更する')
+    br
+    h3 player name #{username}
+    br
+    h4 レート#{rate}
+    h4 世界9876位
+    img(src="/images/rates/3874_rate.png")
+
+
+  //-   #path app.use(express.static(path.join(__dirname, 'public')));がルートに設定されているので注意
