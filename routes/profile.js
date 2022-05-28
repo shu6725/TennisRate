@@ -19,7 +19,17 @@ const storage = multer.diskStorage({
 const uploader = multer({ storage });
 
 router.post("/", uploader.single('image'), (req, res, next) => {
-    res.render('profile', { user: req.user });
+    User.findOne({
+        where: {
+            username: req.user.username
+        }
+    }).then((user) => {
+        res.render('profile', {
+            userId: user.userId,
+            username: user.username,
+            rate: user.rate
+        });
+    });
 });
 
 router.get('/', authenticationEnsurer, (req, res, next) => {
@@ -28,10 +38,13 @@ router.get('/', authenticationEnsurer, (req, res, next) => {
             username: req.user.username
         }
     }).then((user) => {
-        res.render('profile', { user: req.user });
+        res.render('profile', {
+            userId: user.userId,
+            username: user.username,
+            rate: user.rate
+        });
     });
 });
-
 module.exports = router;
 
 // const userId = 349827
