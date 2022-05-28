@@ -6,6 +6,8 @@ ENV PYTHON_ROOT $HOME/local/python-$PYTHON_VERSION
 ENV PATH $PYTHON_ROOT/bin:$PATH
 ENV PYENV_ROOT $HOME/.pyenv
 
+COPY requirements.txt .
+
 RUN apt-get update
 RUN apt-get install -y locales vim tmux
 RUN locale-gen ja_JP.UTF-8
