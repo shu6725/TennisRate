@@ -1,5 +1,5 @@
-# TennisRate
-receive match result and calculate player's rate
+# What's TennisRate
+This application receives match results and calculate player's rates.
 
 ## How to Use
 dockerを用いてコンテナを作成してログインする:
@@ -15,8 +15,7 @@ pip install -r requirements.txt
 yarn start PORT=8000
 ```
 
-## URL
-http://localhost:8000/ 
-
+## 公開アプリURL
+https://stark-gorge-94594.herokuapp.com/
 
 
