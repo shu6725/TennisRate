@@ -10,8 +10,9 @@ pip install -r requirements.txt
 ```
 
 ## アプリ起動
-#### コンテナ下のコマンドを実行
+#### コンテナに入って下のコマンドを実行
 ```
+yarn install
 yarn start PORT=8000
 ```
 
