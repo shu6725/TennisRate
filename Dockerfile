@@ -14,7 +14,8 @@ RUN locale-gen ja_JP.UTF-8
 RUN localedef -f UTF-8 -i ja_JP ja_JP
 RUN pip install --upgrade pip
 RUN pip install --upgrade setuptools
-RUN pip install -r /app/installer.txt
+RUN pip install pandas
+RUN pip install matplotlib
 
 ENV TZ Asia/Tokyo
 WORKDIR /app
