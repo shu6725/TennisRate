@@ -19,7 +19,7 @@ const storage = multer.diskStorage({
 const uploader = multer({ storage });
 
 router.post("/", uploader.single('image'), (req, res, next) => {
-    res.redirect({ user: req.user }, '/profile');
+    res.render('profile', { user: req.user });
 });
 
 router.get('/', authenticationEnsurer, (req, res, next) => {
